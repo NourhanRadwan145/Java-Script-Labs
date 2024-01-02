@@ -7,3 +7,5 @@ var result = firstNumber + secondNumber;
 
 alert(`the summation result of ${firstNumber} + ${secondNumber} is ${result}`);
 document.write(`the summation result of ${firstNumber} + ${secondNumber} is ${result}`)
+
+
