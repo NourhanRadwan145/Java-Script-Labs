@@ -1,4 +1,12 @@
 const humanMethods = {
+    init(fullName, money, sleepMood, healthRate) {
+      this.fullName = fullName;
+      this.money = money;
+      this.sleepMood = sleepMood;
+      this.healthRate = healthRate;
+      return this;
+    },
+  
     sleep(hours) {
       if (hours === 7) {
         this.sleepMood = 'happy';
@@ -24,20 +32,18 @@ const humanMethods = {
     }
   };
   
-  function createPerson(fullName, money, sleepMood, healthRate) {
+  const createHuman = (fullName, money, sleepMood, healthRate) => {
     const person = Object.create(humanMethods);
-    person.fullName = fullName;
-    person.money = money;
-    person.sleepMood = sleepMood;
-    person.healthRate = healthRate;
+    person.init(fullName, money, sleepMood, healthRate);
     return person;
-  }
+  };
   
-  // Creating a new instance of Person using OLOO
-  var person3 = createPerson('Ali Ahmed', 200, 'lazy', 90);
-  person3.sleep(7);
-  person3.eat(1);
-  person3.buy(5);
-
-  console.log(person3);
+  // Creating a new instance of Person using OLOO with init method
+  const person = createHuman('Alice', 200, 'happy', 90);
+  person.sleep(7);
+  person.eat(2);
+  person.buy(3);
+  
+  console.log(person);
+  
   
