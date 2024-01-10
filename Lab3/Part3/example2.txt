@@ -65,7 +65,7 @@ const prototypeObject = { a: 1 };
 const newObject = Object.create(prototypeObject);
 // newObject will have prototypeObject as its prototype
 
-10. 21. Object.assign():
+10. Object.assign():
 Usage: Copies the values of all enumerable own properties 
 from one or more source objects to a target object.
 Example:
