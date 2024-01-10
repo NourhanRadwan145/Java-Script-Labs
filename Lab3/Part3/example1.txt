@@ -1,0 +1,93 @@
+1. Array.prototype.forEach():
+Usage: Executes a provided function once for each array element.
+Example:
+const array = [1, 2, 3];
+array.forEach((element) => {
+  console.log(element); // Output: 1, 2, 3
+});
+
+2. Array.prototype.map():
+Usage: Creates a new array with the results of calling a provided function on every element in the array.
+Example:
+const array = [1, 2, 3];
+const newArray = array.map((element) => {
+  return element * 2;
+});
+// newArray will be [2, 4, 6]
+
+3. Array.prototype.some():
+Usage: Checks if at least one element in the array satisfies the provided testing function.
+Example:
+const array = [1, 2, 3, 4];
+const hasGreaterThanTwo = array.some((element) => {
+  return element > 2;
+});
+// hasGreaterThanTwo will be true
+
+4. Array.prototype.find():
+Usage: Returns the first element in the array that satisfies the provided testing function.
+Example:
+const array = [1, 2, 3, 4];
+const foundElement = array.find((element) => {
+  return element > 2;
+});
+// foundElement will be 3
+
+5. Array.prototype.reduce():
+Usage: Executes a reducer function on each element, resulting in a single output value.
+Example:
+const array = [1, 2, 3, 4];
+const sum = array.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0);
+// sum will be 10 (1 + 2 + 3 + 4)
+
+6. Array.prototype.includes():
+Usage: Determines whether an array includes a certain value among its entries.
+Example:
+const array = [1, 2, 3];
+const includesTwo = array.includes(2);
+// includesTwo will be true
+
+7. Array.prototype.some():
+Usage: Checks if at least one element in the array satisfies the provided testing function.
+Example:
+const array = [1, 2, 3, 4];
+const hasGreaterThanTwo = array.some((element) => {
+  return element > 2;
+});
+// hasGreaterThanTwo will be true
+
+8. Array.prototype.every():
+Usage: Checks if all elements in the array satisfy the provided testing function.
+Example:
+const array = [1, 2, 3, 4];
+const allGreaterThanZero = array.every((element) => {
+  return element > 0;
+});
+// allGreaterThanZero will be true
+
+9. Array.prototype.reverse():
+Usage: Reverses the elements in an array in place.
+Example:
+const array = [1, 2, 3];
+array.reverse();
+// array will be [3, 2, 1]
+
+10. Array.prototype.concat():
+Usage: Merges two or more arrays, returning a new array.
+Example:
+const array1 = [1, 2];
+const array2 = [3, 4];
+const mergedArray = array1.concat(array2);
+// mergedArray will be [1, 2, 3, 4]
+
+
+These methods are powerful tools in JavaScript that simplify common tasks when working with 
+arrays.
+
+
+
+
+
+

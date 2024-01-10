@@ -1,0 +1,78 @@
+1. Object.keys():
+Usage: Returns an array of a given object's own enumerable property names.
+Example:
+const object = { a: 1, b: 2, c: 3 };
+const keysArray = Object.keys(object);
+// keysArray will be ['a', 'b', 'c']
+
+2. Object.values():
+Usage: Returns an array of a given object's own enumerable property values.
+Example:
+const object = { a: 1, b: 2, c: 3 };
+const valuesArray = Object.values(object);
+// valuesArray will be [1, 2, 3]
+
+3. Object.entries():
+Usage: Returns an array of a given object's own enumerable 
+key-value pairs in the form of [key, value] arrays.
+Example:
+const object = { a: 1, b: 2, c: 3 };
+const entriesArray = Object.entries(object);
+// entriesArray will be [['a', 1], ['b', 2], ['c', 3]]
+
+4. Object.hasOwnProperty():
+Usage: Returns a boolean indicating whether the object has 
+the specified property as its own property (not inherited).
+Example:
+const object = { a: 1, b: 2 };
+const hasProperty = object.hasOwnProperty('a');
+// hasProperty will be true
+
+5. Object.freeze():
+Usage: Freezes an object, preventing new properties from being added to it and 
+existing properties from being removed or changed.
+Example:
+const object = { a: 1, b: 2 };
+Object.freeze(object);
+// Now object is immutable
+
+6. Object.seal():
+Usage: Seals an object, preventing new properties from being added to it 
+and marking all existing properties as non-configurable.
+Example:
+const object = { a: 1, b: 2 };
+Object.seal(object);
+// Existing properties can't be deleted or configured
+
+7. Object.getOwnPropertyNames():
+Usage: Returns an array of all properties (enumerable or not) found directly upon a given object.
+Example:
+const object = { a: 1, b: 2 };
+const propertyNamesArray = Object.getOwnPropertyNames(object);
+// propertyNamesArray will be ['a', 'b']
+
+8. Object.fromEntries():
+Usage: Transforms a list of key-value pairs into an object.
+Example:
+const entries = [['a', 1], ['b', 2], ['c', 3]];
+const object = Object.fromEntries(entries);
+// object will be { a: 1, b: 2, c: 3 }
+
+9. Object.create():
+Usage: Creates a new object with the specified prototype object and properties.
+Example:
+const prototypeObject = { a: 1 };
+const newObject = Object.create(prototypeObject);
+// newObject will have prototypeObject as its prototype
+
+10. 21. Object.assign():
+Usage: Copies the values of all enumerable own properties 
+from one or more source objects to a target object.
+Example:
+const target = { a: 1, b: 2 };
+const source = { b: 3, c: 4 };
+const mergedObject = Object.assign(target, source);
+// mergedObject will be { a: 1, b: 3, c: 4 }
+
+These methods are powerful tools in JavaScript that simplify common tasks when working with 
+objects.

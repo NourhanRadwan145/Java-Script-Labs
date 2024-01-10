@@ -1,0 +1,40 @@
+Here's an example demonstrating a nested function and its closure over variables in the lexical scope:
+
+function outerFunction(outerValue) {
+  // Outer function scope
+  console.log(`Outer function is called with ${outerValue}`);
+
+  function innerFunction(innerValue) {
+    // Inner function scope
+    console.log(`Inner function is called with ${innerValue}`);
+    return outerValue + innerValue; // Accesses outerValue from the outer function scope
+  }
+
+  return innerFunction; // Returns the inner function
+}
+
+// Usage
+const addFive = outerFunction(5); // Creates a closure over outerValue as 5
+const result = addFive(3); // Invokes the inner function with innerValue as 3
+
+console.log(result); // Output: 8
+
+In this example:
+outerFunction takes outerValue as a parameter.
+Inside outerFunction, innerFunction is defined, creating a nested structure.
+innerFunction has access to outerValue from its containing scope (lexical scope).
+When outerFunction is called with 5, it returns innerFunction, which is assigned to addFive.
+Later, addFive is invoked with 3, passing it as innerValue.
+The closure formed by addFive allows innerFunction to remember and 
+access outerValue (which was 5 when addFive was created), 
+enabling the addition of 5 + 3, resulting in the return value of 8.
+
+This example showcases the nested structure of functions in JavaScript 
+and how closures retain access to variables from their lexical scope even after 
+the outer function has finished executing.
+
+
+
+
+
+
