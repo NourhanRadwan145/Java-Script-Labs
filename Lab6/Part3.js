@@ -12,7 +12,7 @@ class Triple {
     static longDescription;
   
     static calculate(n) {
-      return super.calculate(n) ** 2;
+      return super.calculate(n) * super.calculate(n);
     }
   }
   
