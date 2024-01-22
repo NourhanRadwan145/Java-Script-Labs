@@ -1,0 +1,114 @@
+<!-- Part 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #todo-container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    li.done {
+      background-color: #d4edda;
+    }
+
+    button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button.done {
+      background-color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+<div id="todo-container">
+  <h2>Todo List</h2>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button onclick="addTask()">Add Task</button>
+
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+  function addTask() {
+    var taskInput = document.getElementById('taskInput');
+    var taskList = document.getElementById('taskList');
+
+    var taskName = taskInput.value.trim();
+
+    if (taskName !== '') {
+      // Create list item with task name, done button, and delete button
+      var listItem = document.createElement('li');
+      listItem.innerHTML = `
+        <span>${taskName}</span>
+        <button class="done" onclick="markDone(this)">Done</button>
+        <button onclick="deleteTask(this)">Delete</button>
+      `;
+
+      // Append the new task to the task list
+      taskList.appendChild(listItem);
+
+      // Clear the input field
+      taskInput.value = '';
+    }
+  }
+
+  function markDone(button) {
+    // Toggle the 'done' class on the parent li element
+    var listItem = button.parentNode;
+    listItem.classList.toggle('done');
+  }
+
+  function deleteTask(button) {
+    // Remove the parent li element when the delete button is clicked
+    var listItem = button.parentNode;
+    var taskList = listItem.parentNode;
+    taskList.removeChild(listItem);
+  }
+</script>
+
+</body>
+</html>
