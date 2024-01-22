@@ -24,7 +24,7 @@ class Shape1 {
   }
   
   // Creating a Square instance
-  const square1 = new Square1(5);
+  const square1 = new Square1(5)
   square1.calcPerimeter(); // Output: Perimeter of square: 20
   square1.calcArea();      // Output: Area of square: 25
   

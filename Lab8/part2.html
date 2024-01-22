@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #watch {
+      font-size: 2em;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    #alarmInput {
+      margin-top: 20px;
+      font-size: 1em;
+    }
+
+    #alarmBtn {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="watch"></div>
+<input type="time" id="alarmInput">
+<button id="alarmBtn" onclick="setAlarm()">Set Alarm</button>
+
+<script>
+  function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('watch').textContent = timeString;
+
+    // Check if the current time matches the alarm time
+    const alarmTime = document.getElementById('alarmInput').value;
+    if (alarmTime === timeString) {
+      alert('Alarm!');
+    }
+  }
+
+  function setAlarm() {
+    const alarmTime = document.getElementById('alarmInput').value;
+    if (alarmTime) {
+      alert('Alarm set for ' + alarmTime);
+    } else {
+      alert('Please select a valid alarm time.');
+    }
+  }
+
+  setInterval(updateTime, 1000); // Update time every second
+</script>
+
+</body>
+</html>
